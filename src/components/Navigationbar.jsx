@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { toast } from 'sonner';
 import { Navbar, Button, Alignment } from '@blueprintjs/core';
 import { useAuth0 } from '@auth0/auth0-react';
 const Navigationbar = () => {
   const promise = () => new Promise((resolve) => setTimeout(resolve, 1000));
-  const { loginWithRedirect, logout } = useAuth0();
+  const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
   return (
     <div>
       <Navbar className="bp5-dark">
         <Navbar.Group align={Alignment.LEFT}>
           <Navbar.Heading>Todo List</Navbar.Heading>
           <Navbar.Divider />
-          <Button className="bp5-minimal" icon="mugshot" text="Profile" />
+        </Navbar.Group>
+        <Navbar.Group align={Alignment.RIGHT}>
+          <Navbar.Divider />
+          <Button className="bp5-dark" icon="mugshot" text={isAuthenticated ? user.email : "Profile"} />
           <Button
-            className="bp5-minimal"
+            className="bp5-dark"
             icon="log-out"
             text="Logout"
             onClick={() =>
@@ -28,7 +31,7 @@ const Navigationbar = () => {
             }
           />
           <Button
-            className="bp5-minimal"
+            className="bp5-dark"
             icon="log-in"
             text="Login"
             onClick={() => loginWithRedirect()}
