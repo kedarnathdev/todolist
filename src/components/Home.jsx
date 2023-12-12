@@ -5,7 +5,7 @@ import { Toaster } from 'sonner';
 const Home = () => {
   return (
     <div>
-      <Toaster richColors />
+      
       <Navigationbar />
       <ListOfTodos />
     </div>

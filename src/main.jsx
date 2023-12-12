@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <BrowserRouter>
     <Auth0Provider
       domain={import.meta.env.VITE_OAUTH_DOMAIN}
       clientId={import.meta.env.VITE_OAUTH_CLIENTID}
@@ -17,5 +18,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     >
       <App />
     </Auth0Provider>
+    </BrowserRouter>
   </React.StrictMode>
 );
