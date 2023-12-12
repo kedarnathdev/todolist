@@ -13,6 +13,9 @@ const Navigationbar = () => {
         <Navbar.Group align={Alignment.LEFT}>
           <Navbar.Heading>Todo List</Navbar.Heading>
           <Navbar.Divider />
+          <Link to="/">
+          <Button className="bp5-dark" icon="mugshot" text="Home" />
+          </Link>
         </Navbar.Group>
         <Navbar.Group align={Alignment.RIGHT}>
           <Navbar.Divider />
