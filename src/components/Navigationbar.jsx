@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 const Navigationbar = () => {
   const promise = () => new Promise((resolve) => setTimeout(resolve, 1000));
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
+  console.log(user)
   return (
     <div>
       <Navbar className="bp5-dark">
